@@ -6,7 +6,12 @@ const tokenSchema = new mongoose.Schema({
     token_type: { type: String, default: "erc20", required: true },
     deployed_on: Date,
     listed_on: Date
-}, , { timestamps: { createdAt: 'created_at', updatedAt: "updated_at" } });
+},
+{ timestamps: { 
+    createdAt: 'created_at', 
+    updatedAt: "updated_at" } 
+});
+
 
 const Token = mongoose.model('Token', tokenSchema);
 module.exports = Token;
