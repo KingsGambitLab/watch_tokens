@@ -230,4 +230,14 @@ app.listen(app.get('port'), () => {
   console.log('  Press CTRL-C to stop\n');
 });
 
+
+const rootPrefix = ".";
+
+
+//To-Do: Move to Route File later on.
+const tokenController = require( rootPrefix + "/controllers/token_controller");
+app.get('/token/new/', tokenController.newTokenForm);
+app.post('/token/create/', tokenController.create);
+
+
 module.exports = app;

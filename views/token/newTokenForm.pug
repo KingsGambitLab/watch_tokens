@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    #input_form.col-lg-6
+        form(role='form', action='/token/create', method='post')
+            #token_name_grp.form-group
+            label.control-label(for='token_name') Token Name
+            input.form-control(name='token_name')
+            p.help-block Enter new token Name
+            #token_address_grp.form-group
+            label.control-label(for='token_address') Token Address
+            input#token_address.form-control(name='token_address')
+            p.help-block Enter new token address here.
+            br
+            button.btn.btn-default(type='submit') Submit
+            button.btn.btn-default(type='reset') Reset
+            input(type='hidden', name='_csrf', value=_csrf)
+    script(src='/js/token/newTokenForm.js')
+    if locals.errors && locals.errors.length > 0
+        script.
+            ($(function () {
+               console.log("I am here!");
+            }));
